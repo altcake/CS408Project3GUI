@@ -44,12 +44,12 @@ namespace CS408Project3GUI
 
         private void MultiplicationButton_Click(object sender, EventArgs e)
         {
-            textBox1.Text += "*";
+            //add code here
         }
 
         private void AdditionButton_Click(object sender, EventArgs e)
         {
-            textBox1.Text += "+";
+            //add code here
         }
 
         private void SubtractionButton_Click(object sender, EventArgs e)
