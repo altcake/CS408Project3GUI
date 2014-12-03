@@ -20,6 +20,61 @@ namespace CS408Project3GUI
         {
             InitializeComponent();
         }
+        private void textBox1_KeyPress(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                Double value1 = 0;
+                Double value2 = 0;
+                Double result = 0;
+                if (e.KeyCode == Keys.Enter)
+                {
+                    string currString = textBox1.Text;
+                    if (currString.IndexOf("/") >= 0)
+                    {
+                        int index = currString.IndexOf("/");
+                        value1 = Double.Parse(textBox1.Text.Substring(0, index));
+                        value2 = Double.Parse(textBox1.Text.Substring(index + 1));
+                        result = value1 / value2;
+                        textBox1.Text = result.ToString();
+                        textBox1.Select(textBox1.Text.Length, 0);
+                    }
+                    else if (currString.IndexOf("*") >= 0)
+                    {
+                        int index = currString.IndexOf("*");
+                        value1 = Double.Parse(textBox1.Text.Substring(0, index));
+                        value2 = Double.Parse(textBox1.Text.Substring(index + 1));
+                        result = value1 * value2;
+                        textBox1.Text = result.ToString();
+                        textBox1.Select(textBox1.Text.Length, 0);
+                    }
+                    else if (currString.IndexOf("+") >= 0)
+                    {
+                        int index = currString.IndexOf("+");
+                        value1 = Double.Parse(textBox1.Text.Substring(0, index));
+                        value2 = Double.Parse(textBox1.Text.Substring(index + 1));
+                        result = value1 + value2;
+                        textBox1.Text = result.ToString();
+                        textBox1.Select(textBox1.Text.Length, 0);
+                    }
+                    else if (currString.IndexOf("-") >= 0)
+                    {
+                        int index = currString.IndexOf("-");
+                        value1 = Double.Parse(textBox1.Text.Substring(0, index));
+                        value2 = Double.Parse(textBox1.Text.Substring(index + 1));
+                        result = value1 - value2;
+                        textBox1.Text = result.ToString();
+                        textBox1.Select(textBox1.Text.Length, 0);
+                    }
+                }
+            }
+            catch (System.FormatException ex)
+            {
+                MessageBox.Show("Input was in an unexpected format.", "You messed up");
+                textBox1.ClearUndo();
+            }
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -42,19 +97,27 @@ namespace CS408Project3GUI
             switch (operation)
             {
                 case "/":
-                    value = value + Double.Parse(textBox1.Text);
+                    string currString = textBox1.Text;
+                    int index = currString.IndexOf("/");
+                    value = value / Double.Parse(textBox1.Text.Substring(index+1));
                     textBox1.Text = value.ToString();
                     break;
                 case "*":
-                    value = value * Double.Parse(textBox1.Text);
+                    currString = textBox1.Text;
+                    index = currString.IndexOf("*");
+                    value = value * Double.Parse(textBox1.Text.Substring(index+1));
                     textBox1.Text = value.ToString();
                     break;
                 case "+":
-                    value = value + Double.Parse(textBox1.Text);
+                    currString = textBox1.Text;
+                    index = currString.IndexOf("+");
+                    value = value + Double.Parse(textBox1.Text.Substring(index+1));
                     textBox1.Text = value.ToString();
                     break;
                 case "-":
-                     value = value - Double.Parse(textBox1.Text);
+                    currString = textBox1.Text;
+                    index = currString.IndexOf("-");
+                    value = value - Double.Parse(textBox1.Text.Substring(index+1));
                     textBox1.Text = value.ToString();
                     break;
                 default:
@@ -79,8 +142,9 @@ namespace CS408Project3GUI
                 catch (System.FormatException ex)
                 {
                     MessageBox.Show("Input was in an unexpected format.", "You messed up");
+                    textBox1.ClearUndo();
                 }
-                textBox1.Clear();
+                textBox1.Text += "/";
                 op = true;
                 DecimalUsed = false;
         }
@@ -97,8 +161,9 @@ namespace CS408Project3GUI
                 catch (System.FormatException ex)
                 {
                     MessageBox.Show("Input was in an unexpected format.", "You messed up");
+                    textBox1.ClearUndo();
                 }
-                textBox1.Clear();
+                textBox1.Text += "*";
                 op = true;
                 DecimalUsed = false;
         }
@@ -115,8 +180,9 @@ namespace CS408Project3GUI
                 catch (System.FormatException ex)
                 {
                     MessageBox.Show("Input was in an unexpected format.", "You messed up");
+                    textBox1.ClearUndo();
                 }
-                textBox1.Clear();
+                textBox1.Text += "+";
                 op = true;
                 DecimalUsed = false;
         }       
@@ -134,8 +200,9 @@ namespace CS408Project3GUI
                 catch (System.FormatException ex)
                 {
                     MessageBox.Show("Input was in an unexpected format.", "You messed up");
+                    textBox1.ClearUndo();
                 }
-                textBox1.Clear();
+                textBox1.Text += "-";
                 op = true;
                 DecimalUsed = false;
         }
