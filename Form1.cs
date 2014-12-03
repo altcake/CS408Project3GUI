@@ -72,7 +72,14 @@ namespace CS408Project3GUI
                 //add code here
                 operation = "/";
                 //save current value in textbox then clear textbox
-                value = Double.Parse(textBox1.Text);
+                try
+                {
+                    value = Double.Parse(textBox1.Text);
+                }
+                catch (System.FormatException ex)
+                {
+                    MessageBox.Show("Input was in an unexpected format.", "You messed up");
+                }
                 textBox1.Clear();
                 op = true;
                 DecimalUsed = false;
@@ -83,7 +90,14 @@ namespace CS408Project3GUI
                 //add code here
                 operation = "*";
                 //save current value in textbox then clear textbox
-                value = Double.Parse(textBox1.Text);
+                try
+                {
+                    value = Double.Parse(textBox1.Text);
+                }
+                catch (System.FormatException ex)
+                {
+                    MessageBox.Show("Input was in an unexpected format.", "You messed up");
+                }
                 textBox1.Clear();
                 op = true;
                 DecimalUsed = false;
@@ -94,7 +108,14 @@ namespace CS408Project3GUI
                 //add code here
                 operation = "+";
                 //save current value in textbox then clear textbox
-                value = Double.Parse(textBox1.Text);
+                try
+                {
+                    value = Double.Parse(textBox1.Text);
+                }
+                catch (System.FormatException ex)
+                {
+                    MessageBox.Show("Input was in an unexpected format.", "You messed up");
+                }
                 textBox1.Clear();
                 op = true;
                 DecimalUsed = false;
@@ -106,7 +127,14 @@ namespace CS408Project3GUI
                 //add code here
                 operation = "-";
                 //save current value in textbox then clear textbox
-                value = Double.Parse(textBox1.Text);
+                try
+                {
+                    value = Double.Parse(textBox1.Text);
+                }
+                catch (System.FormatException ex)
+                {
+                    MessageBox.Show("Input was in an unexpected format.", "You messed up");
+                }
                 textBox1.Clear();
                 op = true;
                 DecimalUsed = false;
