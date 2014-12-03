@@ -154,14 +154,15 @@ namespace CS408Project3GUI
                 {
                     value = Double.Parse(textBox1.Text);
                     textBox1.Text += "/";
+                    op = true;
+                    DecimalUsed = false;
                 }
                 catch (System.FormatException ex)
                 {
                     MessageBox.Show("Input was in an unexpected format.", "You messed up");
                     textBox1.ClearUndo();
                 }
-                op = true;
-                DecimalUsed = false;
+                
         }
 
         private void MultiplicationButton_Click(object sender, EventArgs e)
@@ -173,14 +174,15 @@ namespace CS408Project3GUI
                 {
                     value = Double.Parse(textBox1.Text);
                     textBox1.Text += "*";
+                    op = true;
+                    DecimalUsed = false;
                 }
                 catch (System.FormatException ex)
                 {
                     MessageBox.Show("Input was in an unexpected format.", "You messed up");
                     textBox1.ClearUndo();
                 }
-                op = true;
-                DecimalUsed = false;
+                
         }
 
         private void AdditionButton_Click(object sender, EventArgs e)
@@ -192,14 +194,15 @@ namespace CS408Project3GUI
                 {
                     value = Double.Parse(textBox1.Text);
                     textBox1.Text += "+";
+                    op = true;
+                    DecimalUsed = false;
                 }
                 catch (System.FormatException ex)
                 {
                     MessageBox.Show("Input was in an unexpected format.", "You messed up");
                     textBox1.ClearUndo();
                 }
-                op = true;
-                DecimalUsed = false;
+                
         }       
 
         private void SubtractionButton_Click(object sender, EventArgs e)
@@ -212,14 +215,15 @@ namespace CS408Project3GUI
                 {
                     value = Double.Parse(textBox1.Text);
                     textBox1.Text += "-";
+                    op = true;
+                    DecimalUsed = false;
                 }
                 catch (System.FormatException ex)
                 {
                     MessageBox.Show("Input was in an unexpected format.", "You messed up");
                     textBox1.ClearUndo();
                 }
-                op = true;
-                DecimalUsed = false;
+                
         }
 
         private void DecimalButton_Click(object sender, EventArgs e)
