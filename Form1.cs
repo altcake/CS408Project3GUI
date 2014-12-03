@@ -12,6 +12,9 @@ namespace CS408Project3GUI
 {
     public partial class Form1 : Form
     {
+        Double value = 0;
+        string operation = "";
+        bool op = false;
         public Form1()
         {
             InitializeComponent();
@@ -35,26 +38,62 @@ namespace CS408Project3GUI
         private void EqualsButton_Click(object sender, EventArgs e)
         {
             //add code here
+            switch (operation)
+            {
+                case "/":
+                    value = value + Double.Parse(textBox1.Text);
+                    textBox1.Text = value.ToString();
+                    break;
+                case "*":
+                    value = value * Double.Parse(textBox1.Text);
+                    textBox1.Text = value.ToString();
+                    break;
+                case "+":
+                    value = value + Double.Parse(textBox1.Text);
+                    textBox1.Text = value.ToString();
+                    break;
+                case "-":
+                     value = value - Double.Parse(textBox1.Text);
+                    textBox1.Text = value.ToString();
+                    break;
+            }
+            op = false;
         }
 
         private void DivideButton_Click(object sender, EventArgs e)
         {
             //add code here
+            operation = "/";
+            value = Double.Parse(textBox1.Text);
+            textBox1.Clear();
+            op = true;
         }
 
         private void MultiplicationButton_Click(object sender, EventArgs e)
         {
             //add code here
+            operation = "*";
+            value = Double.Parse(textBox1.Text);
+            textBox1.Clear();
+            op = true;
         }
 
         private void AdditionButton_Click(object sender, EventArgs e)
         {
             //add code here
+            operation = "+";
+            value = Double.Parse(textBox1.Text);
+            textBox1.Clear();
+            op = true;
         }
 
         private void SubtractionButton_Click(object sender, EventArgs e)
         {
             //add code here
+            operation = "-";
+            value = Double.Parse(textBox1.Text);
+            textBox1.Clear();
+            op = true;
         }
 
         private void DecimalButton_Click(object sender, EventArgs e)
