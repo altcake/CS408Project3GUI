@@ -66,52 +66,45 @@ namespace CS408Project3GUI
         }
 
         private void DivideButton_Click(object sender, EventArgs e)
-        {
-            //add code here
-            operation = "/";
-            //save current value in textbox then clear textbox
-            value = Double.Parse(textBox1.Text);
-            textBox1.Clear();
-            op = true;
+        {       
+                //add code here
+                operation = "/";
+                //save current value in textbox then clear textbox
+                value = Double.Parse(textBox1.Text);
+                textBox1.Clear();
+                op = true;
         }
 
         private void MultiplicationButton_Click(object sender, EventArgs e)
         {
-            if (op == false)
-            {
                 //add code here
                 operation = "*";
                 //save current value in textbox then clear textbox
                 value = Double.Parse(textBox1.Text);
                 textBox1.Clear();
                 op = true;
-            }
         }
 
         private void AdditionButton_Click(object sender, EventArgs e)
         {
-            if (op == false)
-            {
                 //add code here
                 operation = "+";
                 //save current value in textbox then clear textbox
                 value = Double.Parse(textBox1.Text);
                 textBox1.Clear();
                 op = true;
-            }
-        }
+        }       
 
         private void SubtractionButton_Click(object sender, EventArgs e)
         {
-            if (op == false)
-            {
+
                 //add code here
                 operation = "-";
                 //save current value in textbox then clear textbox
                 value = Double.Parse(textBox1.Text);
                 textBox1.Clear();
                 op = true;
-            }
+            
         }
 
         private void DecimalButton_Click(object sender, EventArgs e)
