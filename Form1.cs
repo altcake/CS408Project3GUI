@@ -34,12 +34,12 @@ namespace CS408Project3GUI
 
         private void EqualsButton_Click(object sender, EventArgs e)
         {
-            
+            //add code here
         }
 
         private void DivideButton_Click(object sender, EventArgs e)
         {
-            textBox1.Text += "/";
+            //add code here
         }
 
         private void MultiplicationButton_Click(object sender, EventArgs e)
@@ -54,7 +54,7 @@ namespace CS408Project3GUI
 
         private void SubtractionButton_Click(object sender, EventArgs e)
         {
-            textBox1.Text += "-";
+            //add code here
         }
 
         private void DecimalButton_Click(object sender, EventArgs e)
@@ -64,7 +64,13 @@ namespace CS408Project3GUI
 
         private void PlusMinusButton_Click(object sender, EventArgs e)
         {
-            
+            String currentString = textBox1.Text;
+            //if current value already has a '-' appended to the front, then remove it
+            if (currentString[0] == '-') {
+                textBox1.Text = currentString.Substring(1, currentString.Length-1);
+            }
+            //append '-' to front of current value
+            else textBox1.Text = "-" + textBox1.Text;
         }
 
         private void button0_Click(object sender, EventArgs e)
