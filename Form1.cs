@@ -15,6 +15,7 @@ namespace CS408Project3GUI
         Double value = 0;
         string operation = "";
         bool op = false;
+        bool DecimalUsed = false;
         public Form1()
         {
             InitializeComponent();
@@ -63,6 +64,7 @@ namespace CS408Project3GUI
             //operation done, clear var
             operation = "";
             op = false;
+            DecimalUsed = false;
         }
 
         private void DivideButton_Click(object sender, EventArgs e)
@@ -73,6 +75,7 @@ namespace CS408Project3GUI
                 value = Double.Parse(textBox1.Text);
                 textBox1.Clear();
                 op = true;
+                DecimalUsed = false;
         }
 
         private void MultiplicationButton_Click(object sender, EventArgs e)
@@ -83,6 +86,7 @@ namespace CS408Project3GUI
                 value = Double.Parse(textBox1.Text);
                 textBox1.Clear();
                 op = true;
+                DecimalUsed = false;
         }
 
         private void AdditionButton_Click(object sender, EventArgs e)
@@ -93,6 +97,7 @@ namespace CS408Project3GUI
                 value = Double.Parse(textBox1.Text);
                 textBox1.Clear();
                 op = true;
+                DecimalUsed = false;
         }       
 
         private void SubtractionButton_Click(object sender, EventArgs e)
@@ -104,12 +109,16 @@ namespace CS408Project3GUI
                 value = Double.Parse(textBox1.Text);
                 textBox1.Clear();
                 op = true;
-            
+                DecimalUsed = false;
         }
 
         private void DecimalButton_Click(object sender, EventArgs e)
         {
-            textBox1.Text += ".";
+            if (!DecimalUsed)
+            {
+                textBox1.Text += ".";
+                DecimalUsed = true;
+            }
         }
 
         private void PlusMinusButton_Click(object sender, EventArgs e)
