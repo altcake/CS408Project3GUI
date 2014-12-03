@@ -56,7 +56,12 @@ namespace CS408Project3GUI
                      value = value - Double.Parse(textBox1.Text);
                     textBox1.Text = value.ToString();
                     break;
+                default:
+                    //default do nothing
+                    break;
             }
+            //operation done, clear var
+            operation = "";
             op = false;
         }
 
